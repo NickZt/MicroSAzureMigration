@@ -18,6 +18,6 @@ env:
   - name: SONG_SERVICE_URL
     value: "http://gateway:8080/songs"
   - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-    value: "http://discovery:8761/eureka/"
+    value: "http://discovery-discovery:8761/eureka/"
   - name: WEB_APP_TYPE
     value: "servlet"
