@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.postgresSong.name }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.postgresSong.port }}
+      targetPort: 5432
+  selector:
+    app: {{ .Values.postgresSong.name }}
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Values.postgresSong.name }}
+spec:
+  serviceName: {{ .Values.postgresSong.name }}
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.postgresSong.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.postgresSong.name }}
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: {{ .Values.postgresSong.database | quote }}
+            - name: POSTGRES_USER
+              value: {{ .Values.postgresSong.username | quote }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.postgresSong.password | quote }}
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: data
+          emptyDir: {}

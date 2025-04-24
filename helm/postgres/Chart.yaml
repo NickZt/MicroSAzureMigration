@@ -1,0 +1,4 @@
+name: postgres
+version: 0.1.0
+description: Helm chart for two PostgreSQL databases (resource & song)
+appVersion: "15.0"

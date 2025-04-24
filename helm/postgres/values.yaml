@@ -1,0 +1,13 @@
+postgresResource:
+  name: postgres-resource
+  database: resource-db
+  username: moduleuser
+  password: password
+  port: 5432
+
+postgresSong:
+  name: postgres-song
+  database: song-db
+  username: moduleuser
+  password: password
+  port: 5432
