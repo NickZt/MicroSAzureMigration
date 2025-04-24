@@ -1,0 +1,10 @@
+replicaCount: 1
+image:
+  repository: gateway-service
+  tag: latest
+  pullPolicy: Never
+service:
+  port: 8080
+env:
+  - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+    value: "http://discovery:8761/eureka/"

@@ -1,0 +1,8 @@
+replicaCount: 1
+image:
+  repository: discovery-service
+  tag: latest
+  pullPolicy: Never
+service:
+  port: 8761
+env: []

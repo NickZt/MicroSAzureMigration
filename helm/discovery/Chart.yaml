@@ -1,0 +1,4 @@
+name: discovery
+version: 0.1.0
+description: Helm chart for deploying discovery-service
+appVersion: "1.0.0"
