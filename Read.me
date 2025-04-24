@@ -1,0 +1,10 @@
+docker exec -it postgres psql -U nick
+
+SELECT datname FROM pg_database;
+
+docker exec -it postgres-resource psql -U nick
+
+CREATE DATABASE resources_db;
+
+docker exec -it postgres-song psql -U nick
+CREATE DATABASE songs_db;
