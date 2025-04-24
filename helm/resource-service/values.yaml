@@ -3,6 +3,7 @@ replicaCount: 1
 image:
   repository: resource-service
   tag: latest
+  pullPolicy: Never
 
 service:
   port: 8081
