@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: song-service
+  tag: latest
+  pullPolicy: Never
+
+service:
+  port: 8082
+
+env:
+  - name: SPRING_DATASOURCE_URL
+    value: ""
+  - name: POSTGRES_DB_USER
+    value: ""
+  - name: POSTGRES_DB_PASSWORD
+    value: ""
+  - name: RESOURCE_SERVICE_URL
+    value: ""
+  - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+    value: ""
+  - name: WEB_APP_TYPE
+    value: ""

@@ -1,0 +1,4 @@
+name: song-service
+version: 0.1.0
+description: Helm chart for deploying song-service
+appVersion: "1.0.0"
