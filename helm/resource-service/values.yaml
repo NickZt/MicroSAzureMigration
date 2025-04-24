@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: your-docker-registry/resource-service
+  repository: resource-service
   tag: latest
 
 service:
